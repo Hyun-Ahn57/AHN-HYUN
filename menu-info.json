@@ -1,0 +1,422 @@
+{
+  "1": {
+    "weight": "20g",
+    "ingredients": "쇠고기, 간장, 설탕, 마늘, 후추",
+    "origin": "호주산 (쇠고기)",
+    "allergy": "쇠고기, 대두, 밀",
+    "shelf": "제조일로부터 6개월"
+  },
+  "2": {
+    "weight": "20g",
+    "ingredients": "쇠고기, 고춧가루, 간장, 설탕, 청양고추",
+    "origin": "호주산 (쇠고기)",
+    "allergy": "쇠고기, 대두, 밀",
+    "shelf": "제조일로부터 6개월"
+  },
+  "3": {
+    "weight": "20g",
+    "ingredients": "돼지고기, 간장, 물엿, 마늘",
+    "origin": "국내산 (돼지고기)",
+    "allergy": "돼지고기, 대두, 밀",
+    "shelf": "제조일로부터 6개월"
+  },
+  "4": {
+    "weight": "20g",
+    "ingredients": "닭가슴살, 간장, 후추",
+    "origin": "국내산 (닭고기)",
+    "allergy": "닭고기, 대두, 밀",
+    "shelf": "제조일로부터 6개월"
+  },
+  "5": {
+    "weight": "25g",
+    "ingredients": "쥐치어육, 설탕, 소금",
+    "origin": "베트남산",
+    "allergy": "없음",
+    "shelf": "냉동 12개월"
+  },
+  "6": {
+    "weight": "15g",
+    "ingredients": "황태, 소금",
+    "origin": "러시아산 (국내 가공)",
+    "allergy": "없음",
+    "shelf": "제조일로부터 12개월"
+  },
+  "7": {
+    "weight": "15g",
+    "ingredients": "대구, 설탕, 소금",
+    "origin": "미국산",
+    "allergy": "없음",
+    "shelf": "제조일로부터 12개월"
+  },
+  "8": {
+    "weight": "20g",
+    "ingredients": "어육, 밀가루, 식물성유지",
+    "origin": "국내 가공",
+    "allergy": "밀, 대두",
+    "shelf": "제조일로부터 6개월"
+  },
+  "9": {
+    "weight": "20g",
+    "ingredients": "오징어",
+    "origin": "국내산",
+    "allergy": "오징어",
+    "shelf": "냉동 12개월"
+  },
+  "10": {
+    "weight": "20g + 소스 10g",
+    "ingredients": "명태, 마요네즈, 청양고추",
+    "origin": "러시아산 (명태)",
+    "allergy": "계란, 대두",
+    "shelf": "제조일로부터 12개월"
+  },
+  "11": {
+    "weight": "25g",
+    "ingredients": "명태 (노가리)",
+    "origin": "러시아산",
+    "allergy": "없음",
+    "shelf": "제조일로부터 12개월"
+  },
+  "12": {
+    "weight": "25g",
+    "ingredients": "오징어, 소금, 설탕, 솔비톨",
+    "origin": "페루산 (오징어)",
+    "allergy": "오징어",
+    "shelf": "제조일로부터 12개월"
+  },
+  "13": {
+    "weight": "20g",
+    "ingredients": "한치",
+    "origin": "국내산 (제주)",
+    "allergy": "오징어",
+    "shelf": "냉동 12개월"
+  },
+  "14": {
+    "weight": "20g",
+    "ingredients": "문어, 소금",
+    "origin": "국내산",
+    "allergy": "없음",
+    "shelf": "냉동 12개월"
+  },
+  "15": {
+    "weight": "25g",
+    "ingredients": "멸치, 아몬드, 물엿, 간장",
+    "origin": "국내산 (멸치), 미국산 (아몬드)",
+    "allergy": "대두, 밀",
+    "shelf": "제조일로부터 30일"
+  },
+  "16": {
+    "weight": "15g",
+    "ingredients": "북어",
+    "origin": "러시아산 (국내 가공)",
+    "allergy": "없음",
+    "shelf": "제조일로부터 12개월"
+  },
+  "17": {
+    "weight": "25g",
+    "ingredients": "쥐치어육, 설탕, 간장",
+    "origin": "베트남산",
+    "allergy": "대두, 밀",
+    "shelf": "냉동 12개월"
+  },
+  "18": {
+    "weight": "20g",
+    "ingredients": "오징어 다리, 소금",
+    "origin": "페루산",
+    "allergy": "오징어",
+    "shelf": "냉동 12개월"
+  },
+  "19": {
+    "weight": "25g",
+    "ingredients": "아몬드, 소금",
+    "origin": "미국산",
+    "allergy": "없음 (아몬드 함유)",
+    "shelf": "제조일로부터 12개월"
+  },
+  "20": {
+    "weight": "20g",
+    "ingredients": "호두",
+    "origin": "미국산",
+    "allergy": "호두",
+    "shelf": "제조일로부터 12개월"
+  },
+  "21": {
+    "weight": "30g",
+    "ingredients": "땅콩, 소금",
+    "origin": "중국산",
+    "allergy": "땅콩",
+    "shelf": "제조일로부터 12개월"
+  },
+  "22": {
+    "weight": "25g",
+    "ingredients": "캐슈넛",
+    "origin": "베트남산",
+    "allergy": "없음",
+    "shelf": "제조일로부터 12개월"
+  },
+  "23": {
+    "weight": "25g (껍질 포함)",
+    "ingredients": "피스타치오, 소금",
+    "origin": "미국산",
+    "allergy": "없음",
+    "shelf": "제조일로부터 12개월"
+  },
+  "24": {
+    "weight": "20g",
+    "ingredients": "마카다미아",
+    "origin": "호주산",
+    "allergy": "없음",
+    "shelf": "제조일로부터 12개월"
+  },
+  "26": {
+    "weight": "25g",
+    "ingredients": "아몬드, 캐슈넛, 호두, 피칸",
+    "origin": "미국산, 베트남산",
+    "allergy": "호두",
+    "shelf": "제조일로부터 12개월"
+  },
+  "27": {
+    "weight": "30g",
+    "ingredients": "대두, 식물성유지, 소금",
+    "origin": "국내산",
+    "allergy": "대두",
+    "shelf": "제조일로부터 9개월"
+  },
+  "28": {
+    "weight": "2개 (약 40g)",
+    "ingredients": "밀가루, 조청, 참기름, 생강",
+    "origin": "국내 제조",
+    "allergy": "밀, 대두",
+    "shelf": "제조일로부터 3개월"
+  },
+  "29": {
+    "weight": "5개 (약 40g)",
+    "ingredients": "찹쌀, 조청, 튀밥",
+    "origin": "국내산",
+    "allergy": "정보 입력 필요",
+    "shelf": "제조일로부터 3개월"
+  },
+  "30": {
+    "weight": "25g",
+    "ingredients": "참깨, 조청",
+    "origin": "국내 제조",
+    "allergy": "없음",
+    "shelf": "제조일로부터 6개월"
+  },
+  "31": {
+    "weight": "30g",
+    "ingredients": "땅콩, 조청, 설탕",
+    "origin": "중국산 (땅콩)",
+    "allergy": "땅콩",
+    "shelf": "제조일로부터 6개월"
+  },
+  "32": {
+    "weight": "6개 (약 40g)",
+    "ingredients": "콩가루, 송화가루, 꿀",
+    "origin": "국내산",
+    "allergy": "대두",
+    "shelf": "제조일로부터 2개월"
+  },
+  "33": {
+    "weight": "1개 (약 40g)",
+    "ingredients": "감",
+    "origin": "국내산 (상주)",
+    "allergy": "없음",
+    "shelf": "냉동 12개월"
+  },
+  "34": {
+    "weight": "25g",
+    "ingredients": "대추, 조청",
+    "origin": "국내산",
+    "allergy": "없음",
+    "shelf": "제조일로부터 6개월"
+  },
+  "35": {
+    "weight": "25g",
+    "ingredients": "연근, 설탕, 물엿",
+    "origin": "국내산",
+    "allergy": "없음",
+    "shelf": "제조일로부터 6개월"
+  },
+  "36": {
+    "weight": "2뿌리 (약 20g)",
+    "ingredients": "인삼, 꿀, 물엿",
+    "origin": "국내산 (금산)",
+    "allergy": "없음",
+    "shelf": "제조일로부터 12개월"
+  },
+  "37": {
+    "weight": "30g",
+    "ingredients": "자연치즈",
+    "origin": "뉴질랜드산",
+    "allergy": "우유",
+    "shelf": "냉장 60일"
+  },
+  "38": {
+    "weight": "30g",
+    "ingredients": "자연치즈",
+    "origin": "독일산",
+    "allergy": "우유",
+    "shelf": "냉장 90일"
+  },
+  "39": {
+    "weight": "2장 (약 36g)",
+    "ingredients": "체다 치즈",
+    "origin": "미국산",
+    "allergy": "우유",
+    "shelf": "냉장 90일"
+  },
+  "40": {
+    "weight": "1개 (약 25g)",
+    "ingredients": "모차렐라 치즈",
+    "origin": "국내산",
+    "allergy": "우유",
+    "shelf": "냉장 60일"
+  },
+  "41": {
+    "weight": "3개 (약 30g)",
+    "ingredients": "크림치즈",
+    "origin": "미국산",
+    "allergy": "우유",
+    "shelf": "냉장 30일"
+  },
+  "42": {
+    "weight": "1조각 (약 30g)",
+    "ingredients": "까망베르 치즈",
+    "origin": "프랑스산",
+    "allergy": "우유",
+    "shelf": "냉장 45일"
+  },
+  "43": {
+    "weight": "25g",
+    "ingredients": "망고, 설탕",
+    "origin": "필리핀산",
+    "allergy": "아황산류",
+    "shelf": "제조일로부터 12개월"
+  },
+  "45": {
+    "weight": "30g",
+    "ingredients": "크랜베리, 설탕, 해바라기유",
+    "origin": "미국산",
+    "allergy": "없음",
+    "shelf": "제조일로부터 12개월"
+  },
+  "47": {
+    "weight": "50g",
+    "ingredients": "고구마",
+    "origin": "국내산",
+    "allergy": "없음",
+    "shelf": "제조일로부터 6개월"
+  },
+  "48": {
+    "weight": "30g",
+    "ingredients": "감",
+    "origin": "국내산",
+    "allergy": "없음",
+    "shelf": "냉동 12개월"
+  },
+  "49": {
+    "weight": "15g",
+    "ingredients": "사과",
+    "origin": "국내산",
+    "allergy": "없음",
+    "shelf": "제조일로부터 9개월"
+  },
+  "51": {
+    "weight": "2개 (약 30g)",
+    "ingredients": "무화과",
+    "origin": "터키산",
+    "allergy": "없음",
+    "shelf": "제조일로부터 12개월"
+  },
+  "52": {
+    "weight": "25g",
+    "ingredients": "대추",
+    "origin": "국내산",
+    "allergy": "없음",
+    "shelf": "제조일로부터 12개월"
+  },
+  "53": {
+    "weight": "10g",
+    "ingredients": "김, 찹쌀풀, 식물성유지, 참깨",
+    "origin": "국내산",
+    "allergy": "없음",
+    "shelf": "제조일로부터 6개월"
+  },
+  "54": {
+    "weight": "10g",
+    "ingredients": "다시마, 설탕, 참깨",
+    "origin": "국내산 (완도)",
+    "allergy": "없음",
+    "shelf": "제조일로부터 6개월"
+  },
+  "55": {
+    "weight": "15g",
+    "ingredients": "연근, 식물성유지, 소금",
+    "origin": "국내산",
+    "allergy": "없음",
+    "shelf": "제조일로부터 6개월"
+  },
+  "56": {
+    "weight": "20g",
+    "ingredients": "고구마, 식물성유지",
+    "origin": "국내산",
+    "allergy": "없음",
+    "shelf": "제조일로부터 6개월"
+  },
+  "57": {
+    "weight": "20g",
+    "ingredients": "감자, 해바라기유, 소금",
+    "origin": "국내산",
+    "allergy": "없음",
+    "shelf": "제조일로부터 6개월"
+  },
+  "58": {
+    "weight": "15g",
+    "ingredients": "마늘, 식물성유지",
+    "origin": "국내산 (의성)",
+    "allergy": "없음",
+    "shelf": "제조일로부터 9개월"
+  },
+  "59": {
+    "weight": "15g",
+    "ingredients": "밀가루, 새우, 식물성유지",
+    "origin": "국내 제조",
+    "allergy": "밀, 새우",
+    "shelf": "제조일로부터 9개월"
+  },
+  "60": {
+    "weight": "40g",
+    "ingredients": "쌀, 식물성 유지, 소금",
+    "origin": "국내산",
+    "allergy": "정보 입력 필요",
+    "shelf": "제조일로부터 6개월"
+  },
+  "61": {
+    "weight": "15g",
+    "ingredients": "옥수수, 버터, 설탕, 소금",
+    "origin": "미국산 (옥수수)",
+    "allergy": "우유",
+    "shelf": "제조일로부터 6개월"
+  },
+  "62": {
+    "weight": "20g",
+    "ingredients": "옥수수, 식물성유지, 소금",
+    "origin": "미국산",
+    "allergy": "없음",
+    "shelf": "제조일로부터 9개월"
+  },
+  "63": {
+    "weight": "5알 (약 50g)",
+    "ingredients": "메추리알, 소금",
+    "origin": "국내산",
+    "allergy": "알류",
+    "shelf": "냉장 30일"
+  },
+  "64": {
+    "weight": "2개 (약 40g)",
+    "ingredients": "돼지고기, 닭고기, 전분",
+    "origin": "국내산",
+    "allergy": "돼지고기, 닭고기, 대두",
+    "shelf": "냉장 60일"
+  }
+}
