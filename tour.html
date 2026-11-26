@@ -5,16 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>안양 하루 코스</title>
   <style>
-    /* 색상: 기존 index.html(밤참상회)과 같은 색을 사용 */
+    /* 색상: 채도가 낮은 푸른색 계열 */
     :root {
-      --bg: #f7f0e6;        /* 바탕 (베이지) */
-      --surface: #fcf8f2;   /* 카드 바탕 */
-      --text: #2f2b28;      /* 글자 (진한 갈색) */
-      --accent: #c86b4a;    /* 강조 (주황빛 갈색) */
-      --olive: #6d7a4f;     /* 보조 (올리브) */
-      --brown: #8f5a3c;     /* 보조 (갈색) */
-      --line: #e2d8ca;      /* 테두리 */
-      --muted: #6f655c;     /* 흐린 글자 */
+      --bg: #eef2f5;        /* 바탕 (아주 옅은 회청색) */
+      --surface: #f8fafb;   /* 카드 바탕 */
+      --text: #26313a;      /* 글자 (짙은 남색) */
+      --accent: #4f6f8a;    /* 강조 (차분한 파랑) */
+      --blue2: #6b8796;     /* 보조 (회색빛 파랑) */
+      --blue3: #3f5566;     /* 보조 (짙은 회청색) */
+      --soft: #e3eaf0;      /* 옅은 강조 바탕 */
+      --line: #d5dee5;      /* 테두리 */
+      --muted: #5f6c76;     /* 흐린 글자 */
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -39,7 +40,7 @@
     .intro { font-size: 17px; color: var(--muted); }
     .target {
       display: inline-block; margin-top: 14px; padding: 4px 12px;
-      background: #eef0e6; color: var(--olive); border-radius: 999px; font-size: 14px; font-weight: 600;
+      background: var(--soft); color: var(--blue3); border-radius: 999px; font-size: 14px; font-weight: 600;
     }
 
     section { margin-top: 40px; }
@@ -49,11 +50,11 @@
     .ex {
       display: inline-block; margin-left: 6px; padding: 1px 8px;
       font-size: 12px; font-weight: 700; vertical-align: middle;
-      color: var(--accent); background: #f8e9e2; border-radius: 6px;
+      color: var(--accent); background: var(--soft); border-radius: 6px;
     }
     .note { font-size: 14px; color: var(--muted); margin-top: 10px; }
 
-    /* 추천 장소 카드: PC에서는 3칸, 휴대폰에서는 1칸 */
+    /* 추천 장소 카드: PC에서는 3칸씩 2줄, 휴대폰에서는 1칸 */
     .places { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; list-style: none; }
     .card {
       background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px;
@@ -63,8 +64,8 @@
       width: 28px; height: 28px; border-radius: 50%;
       background: var(--accent); color: #fff; font-weight: 700; font-size: 14px; margin-bottom: 10px;
     }
-    .card:nth-child(2) .num { background: var(--olive); }
-    .card:nth-child(3) .num { background: var(--brown); }
+    .card:nth-child(3n+2) .num { background: var(--blue2); }
+    .card:nth-child(3n) .num { background: var(--blue3); }
     .card h3 { font-size: 17px; margin-bottom: 4px; }
     .card p { font-size: 15px; color: var(--muted); }
 
@@ -78,19 +79,19 @@
     table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
     th, td { padding: 12px 18px; text-align: left; border-bottom: 1px solid var(--line); }
     td.won { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
-    tr.total td { font-weight: 700; border-bottom: none; background: #f3ece2; }
+    tr.total td { font-weight: 700; border-bottom: none; background: var(--soft); }
 
     /* 문의 버튼 */
     .contact { text-align: center; background: var(--text); color: var(--bg); border-radius: 16px; padding: 28px 18px; }
     .contact h2 { margin-bottom: 6px; }
-    .contact p { color: #d8ccbc; font-size: 15px; }
+    .contact p { color: #c5d0d8; font-size: 15px; }
     .btn {
       display: inline-block; margin-top: 16px; padding: 13px 28px;
       background: var(--accent); color: #fff; border: none; border-radius: 999px;
       font: inherit; font-weight: 700; font-size: 16px; cursor: pointer;
     }
     .btn:hover { filter: brightness(1.08); }
-    #contactMsg { margin-top: 12px; font-size: 14px; color: #e3ad96; min-height: 1.4em; }
+    #contactMsg { margin-top: 12px; font-size: 14px; color: #a9bccb; min-height: 1.4em; }
   </style>
 </head>
 <body>
@@ -110,7 +111,7 @@
 
     <!-- 추천 장소 3곳 -->
     <section>
-      <h2>추천 장소 3곳</h2>
+      <h2>추천 장소 6곳</h2>
       <ol class="places">
         <li class="card">
           <span class="num">1</span>
@@ -127,7 +128,23 @@
           <h3>범계역 로데오거리</h3>
           <p>4호선 범계역 주변 번화가. 저녁 먹고 카페 가기 좋아요.</p>
         </li>
+        <li class="card">
+          <span class="num">4</span>
+          <h3>안양중앙시장</h3>
+          <p>안양1번가 가까이 있는 전통시장. 시장 먹거리를 맛보기 좋아요.</p>
+        </li>
+        <li class="card">
+          <span class="num">5</span>
+          <h3>안양예술공원</h3>
+          <p>산과 계곡 사이에 야외 예술 작품이 놓인 공원. 시간 여유가 있을 때 추천해요.</p>
+        </li>
+        <li class="card">
+          <span class="num">6</span>
+          <h3>안양천 산책로</h3>
+          <p>안양 시내를 따라 흐르는 하천 길. 걷거나 자전거 타기 좋아요.</p>
+        </li>
       </ol>
+      <p class="note">4~6번은 일정표에 넣지 않은 추가 추천 장소예요. 가는 방법은 지도 앱으로 확인하세요.</p>
     </section>
 
     <!-- 하루 일정표 -->
