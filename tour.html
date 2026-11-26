@@ -32,18 +32,27 @@
     .wrap { max-width: 760px; margin: 0 auto; padding: 0 16px 48px; }
 
     /* 맨 위 "홈으로" 막대 */
-    .topbar { padding: 14px 0; border-bottom: 1px solid var(--line); margin-bottom: 28px; }
-    .topbar a { color: var(--text); text-decoration: none; font-weight: 600; }
-    .topbar a:hover { color: var(--accent); }
+    .topbar { padding: 14px 0; }
+    .topbar a { color: var(--blue3); text-decoration: none; font-weight: 600; font-size: 15px; }
+    .topbar a:hover { color: var(--accent); text-decoration: underline; }
 
-    h1 { font-size: clamp(26px, 6vw, 38px); line-height: 1.25; margin-bottom: 10px; }
-    .intro { font-size: 17px; color: var(--muted); }
+    /* 맨 위 소개 영역 (짙은 회청색 판) */
+    .hero {
+      background: var(--blue3);
+      color: #f3f6f8;
+      border-radius: 20px;
+      padding: 36px 28px;
+    }
+    .hero .kicker { font-size: 14px; font-weight: 700; letter-spacing: .08em; color: #a9bccb; }
+    .hero h1 { font-size: clamp(26px, 6vw, 38px); line-height: 1.25; margin: 6px 0 12px; }
+    .hero .intro { font-size: 17px; color: #d3dde4; }
     .target {
-      display: inline-block; margin-top: 14px; padding: 4px 12px;
-      background: var(--soft); color: var(--blue3); border-radius: 999px; font-size: 14px; font-weight: 600;
+      display: inline-block; margin-top: 18px; padding: 5px 14px;
+      background: rgba(255,255,255,.12); color: #f3f6f8;
+      border-radius: 999px; font-size: 14px; font-weight: 600;
     }
 
-    section { margin-top: 40px; }
+    section { margin-top: 44px; }
     h2 { font-size: 21px; margin-bottom: 14px; }
 
     /* "예시" 표시 */
@@ -58,22 +67,36 @@
     .places { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; list-style: none; }
     .card {
       background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px;
+      border-top: 4px solid var(--accent);
+      transition: transform .15s, box-shadow .15s;
     }
-    .num {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 28px; height: 28px; border-radius: 50%;
-      background: var(--accent); color: #fff; font-weight: 700; font-size: 14px; margin-bottom: 10px;
-    }
-    .card:nth-child(3n+2) .num { background: var(--blue2); }
-    .card:nth-child(3n) .num { background: var(--blue3); }
-    .card h3 { font-size: 17px; margin-bottom: 4px; }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(38,49,58,.08); }
+    .card:nth-child(3n+2) { border-top-color: var(--blue2); }
+    .card:nth-child(3n)   { border-top-color: var(--blue3); }
+    .num { font-size: 13px; font-weight: 700; color: var(--muted); }
+    .card h3 { font-size: 17px; margin: 2px 0 4px; }
     .card p { font-size: 15px; color: var(--muted); }
 
-    /* 일정표 */
-    .timeline { list-style: none; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; }
-    .timeline li { display: flex; gap: 16px; padding: 14px 18px; border-bottom: 1px solid var(--line); }
-    .timeline li:last-child { border-bottom: none; }
-    .time { flex: 0 0 64px; font-weight: 700; color: var(--accent); font-variant-numeric: tabular-nums; }
+    /* 일정표: 세로 선과 점으로 이어진 모양 */
+    .timeline { list-style: none; position: relative; padding-left: 26px; }
+    .timeline::before {
+      content: ""; position: absolute; left: 7px; top: 8px; bottom: 8px;
+      width: 2px; background: var(--line);
+    }
+    .timeline li { position: relative; padding: 0 0 18px; }
+    .timeline li:last-child { padding-bottom: 0; }
+    .timeline li::before {
+      content: ""; position: absolute; left: -26px; top: 6px;
+      width: 16px; height: 16px; border-radius: 50%;
+      background: var(--surface); border: 3px solid var(--accent);
+    }
+    .time { display: block; font-weight: 700; color: var(--accent); font-variant-numeric: tabular-nums; font-size: 15px; }
+    .what { font-size: 16px; }
+    .tag {
+      display: inline-block; margin-left: 4px; padding: 0 7px; border-radius: 6px;
+      font-size: 12px; font-weight: 700; color: var(--blue3); background: var(--soft);
+      vertical-align: 1px;
+    }
 
     /* 비용 표 */
     table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
@@ -82,16 +105,16 @@
     tr.total td { font-weight: 700; border-bottom: none; background: var(--soft); }
 
     /* 문의 버튼 */
-    .contact { text-align: center; background: var(--text); color: var(--bg); border-radius: 16px; padding: 28px 18px; }
+    .contact { text-align: center; background: var(--surface); border: 1px solid var(--line); border-radius: 20px; padding: 30px 18px; }
     .contact h2 { margin-bottom: 6px; }
-    .contact p { color: #c5d0d8; font-size: 15px; }
+    .contact p { color: var(--muted); font-size: 15px; }
     .btn {
-      display: inline-block; margin-top: 16px; padding: 13px 28px;
+      display: inline-block; margin-top: 16px; padding: 13px 30px;
       background: var(--accent); color: #fff; border: none; border-radius: 999px;
       font: inherit; font-weight: 700; font-size: 16px; cursor: pointer;
     }
-    .btn:hover { filter: brightness(1.08); }
-    #contactMsg { margin-top: 12px; font-size: 14px; color: #a9bccb; min-height: 1.4em; }
+    .btn:hover { background: var(--blue3); }
+    #contactMsg { margin-top: 12px; font-size: 14px; color: var(--accent); min-height: 1.4em; }
   </style>
 </head>
 <body>
@@ -103,73 +126,74 @@
     </nav>
 
     <!-- 제목과 한 줄 소개 -->
-    <header>
+    <header class="hero">
+      <p class="kicker">ANYANG ONE DAY</p>
       <h1>안양 하루 코스<br>안양1번가에서 평촌까지</h1>
-      <p class="intro">안양역 앞 번화가에서 시작해 평촌 공원과 범계역 거리까지, 하루에 둘러보는 안양 산책 코스예요.</p>
+      <p class="intro">예술공원과 시장, 안양역 앞 번화가를 지나 평촌 공원과 범계역 거리까지, 하루에 둘러보는 안양 산책 코스예요.</p>
       <span class="target">안양을 처음 오는 20·30대 추천</span>
     </header>
 
-    <!-- 추천 장소 3곳 -->
+    <!-- 추천 장소 6곳 -->
     <section>
       <h2>추천 장소 6곳</h2>
       <ol class="places">
         <li class="card">
-          <span class="num">1</span>
-          <h3>안양1번가</h3>
-          <p>1호선 안양역 앞 상점가. 옷 가게와 먹거리가 모여 있어요.</p>
+          <span class="num">01</span>
+          <h3>안양예술공원</h3>
+          <p>산과 계곡 사이에 야외 예술 작품이 놓인 공원. 아침 산책으로 좋아요.</p>
         </li>
         <li class="card">
-          <span class="num">2</span>
-          <h3>평촌중앙공원</h3>
-          <p>평촌 시내 한가운데 있는 넓은 공원. 걷고 쉬어 가기 좋아요.</p>
-        </li>
-        <li class="card">
-          <span class="num">3</span>
-          <h3>범계역 로데오거리</h3>
-          <p>4호선 범계역 주변 번화가. 저녁 먹고 카페 가기 좋아요.</p>
-        </li>
-        <li class="card">
-          <span class="num">4</span>
+          <span class="num">02</span>
           <h3>안양중앙시장</h3>
           <p>안양1번가 가까이 있는 전통시장. 시장 먹거리를 맛보기 좋아요.</p>
         </li>
         <li class="card">
-          <span class="num">5</span>
-          <h3>안양예술공원</h3>
-          <p>산과 계곡 사이에 야외 예술 작품이 놓인 공원. 시간 여유가 있을 때 추천해요.</p>
+          <span class="num">03</span>
+          <h3>안양1번가</h3>
+          <p>1호선 안양역 앞 상점가. 옷 가게와 먹거리가 모여 있어요.</p>
         </li>
         <li class="card">
-          <span class="num">6</span>
+          <span class="num">04</span>
           <h3>안양천 산책로</h3>
           <p>안양 시내를 따라 흐르는 하천 길. 걷거나 자전거 타기 좋아요.</p>
         </li>
+        <li class="card">
+          <span class="num">05</span>
+          <h3>평촌중앙공원</h3>
+          <p>평촌 시내 한가운데 있는 넓은 공원. 걷고 쉬어 가기 좋아요.</p>
+        </li>
+        <li class="card">
+          <span class="num">06</span>
+          <h3>범계역 로데오거리</h3>
+          <p>4호선 범계역 주변 번화가. 저녁 먹고 카페 가기 좋아요.</p>
+        </li>
       </ol>
-      <p class="note">4~6번은 일정표에 넣지 않은 추가 추천 장소예요. 가는 방법은 지도 앱으로 확인하세요.</p>
     </section>
 
     <!-- 하루 일정표 -->
     <section>
       <h2>하루 일정표 <span class="ex">예시</span></h2>
       <ol class="timeline">
-        <li><span class="time">11:00</span><span>안양역 도착, 안양1번가 구경</span></li>
-        <li><span class="time">12:30</span><span>안양1번가에서 점심</span></li>
-        <li><span class="time">14:00</span><span>평촌으로 이동 (지하철·버스·택시)</span></li>
-        <li><span class="time">15:00</span><span>평촌중앙공원 산책</span></li>
-        <li><span class="time">17:00</span><span>범계역 로데오거리 구경, 카페</span></li>
-        <li><span class="time">18:30</span><span>범계역 근처에서 저녁, 마무리</span></li>
+        <li><span class="time">10:00</span><span class="what">안양예술공원 산책 <span class="tag">01</span></span></li>
+        <li><span class="time">12:00</span><span class="what">안양역 쪽으로 이동, 안양중앙시장에서 점심 <span class="tag">02</span></span></li>
+        <li><span class="time">13:30</span><span class="what">안양1번가 구경 <span class="tag">03</span></span></li>
+        <li><span class="time">15:00</span><span class="what">안양천 산책로 잠깐 걷기 <span class="tag">04</span></span></li>
+        <li><span class="time">16:00</span><span class="what">평촌으로 이동, 평촌중앙공원에서 쉬기 <span class="tag">05</span></span></li>
+        <li><span class="time">17:30</span><span class="what">범계역 로데오거리 구경, 카페 <span class="tag">06</span></span></li>
+        <li><span class="time">19:00</span><span class="what">범계역 근처에서 저녁, 마무리</span></li>
       </ol>
-      <p class="note">시간은 예시예요. 이동 방법과 걸리는 시간은 출발 전에 지도 앱으로 꼭 확인하세요.</p>
+      <p class="note">시간은 예시예요. 장소가 많아 바쁜 일정이니, 힘들면 한두 곳은 빼도 좋아요. 이동 방법과 걸리는 시간은 출발 전에 지도 앱으로 꼭 확인하세요.</p>
     </section>
 
     <!-- 예상 비용 -->
     <section>
       <h2>예상 비용 (1인) <span class="ex">예시</span></h2>
       <table>
-        <tr><td>교통비</td><td class="won">약 5,000원</td></tr>
-        <tr><td>점심</td><td class="won">약 12,000원</td></tr>
+        <tr><td>교통비</td><td class="won">약 7,000원</td></tr>
+        <tr><td>점심 (시장)</td><td class="won">약 12,000원</td></tr>
         <tr><td>카페</td><td class="won">약 7,000원</td></tr>
         <tr><td>저녁</td><td class="won">약 20,000원</td></tr>
-        <tr class="total"><td>합계</td><td class="won">약 44,000원</td></tr>
+        <tr class="total"><td>합계</td><td class="won">약 46,000원</td></tr>
       </table>
       <p class="note">금액은 실제 가격이 아닌 예시예요. 가게와 메뉴에 따라 달라져요.</p>
     </section>
