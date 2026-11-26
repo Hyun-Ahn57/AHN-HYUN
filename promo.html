@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>안양 하루 코스 홍보 영상</title>
+  <!-- 한글 폰트: Noto Sans KR (못 불러오면 컴퓨터에 있는 한글 폰트를 사용) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #07090c;       /* 바탕: 거의 검정 */
+      --text: #ffffff;     /* 글자: 흰색 */
+      --hot: #ffd23f;      /* 강조: 밝은 노랑 */
+      --blue: #4f6f8a;     /* tour.html의 파랑 */
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; background: #000; overflow: hidden; }
+    body {
+      display: flex; align-items: center; justify-content: center;
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", "NanumGothic", sans-serif;
+      color: var(--text);
+      word-break: keep-all;
+    }
+
+    /* 16:9 화면. 창 크기에 맞춰 가장 크게 */
+    .stage {
+      position: relative;
+      width: min(100vw, calc(100vh * 16 / 9));
+      aspect-ratio: 16 / 9;
+      background: radial-gradient(ellipse at center, #121821 0%, var(--bg) 70%);
+      overflow: hidden;
+      container-type: size;   /* 글자 크기를 화면 너비(cqw) 기준으로 */
+    }
+
+    /* 장면: 기본은 숨김, .on 이 붙으면 보임 */
+    .scene {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; opacity: 0; visibility: hidden;
+    }
+    .scene.on { opacity: 1; visibility: visible; }
+
+    /* 0~2초: 제목 */
+    .title { font-size: 15cqw; font-weight: 900; line-height: 1.05; letter-spacing: -0.02em; }
+    .title em { font-style: normal; color: var(--hot); }
+    .on .title { animation: slam .55s cubic-bezier(.2,1.4,.4,1) both; }
+    @keyframes slam {
+      0%   { transform: scale(3.2); opacity: 0; filter: blur(12px); }
+      70%  { transform: scale(.94); opacity: 1; filter: blur(0); }
+      100% { transform: scale(1); }
+    }
+
+    /* 화면 전체 흔들림, 번쩍임 */
+    .stage.shake { animation: shake .35s linear; }
+    @keyframes shake {
+      0%,100% { transform: translate(0,0); }
+      20% { transform: translate(-1.2%, .8%); }
+      40% { transform: translate(1%, -1%); }
+      60% { transform: translate(-.8%, -.6%); }
+      80% { transform: translate(.6%, .8%); }
+    }
+    .flash { position: absolute; inset: 0; background: #fff; opacity: 0; pointer-events: none; z-index: 5; }
+    .flash.go { animation: flash .3s ease-out; }
+    @keyframes flash { 0% { opacity: .85; } 100% { opacity: 0; } }
+
+    /* 2~8초: 장소 */
+    .label { font-size: 3cqw; font-weight: 700; color: var(--hot); letter-spacing: .3em; margin-bottom: 1.5cqw; }
+    .big   { font-size: 11cqw; font-weight: 900; line-height: 1.1; }
+    .num   { font-size: 3.2cqw; font-weight: 900; color: var(--bg); background: var(--hot); padding: .2cqw 1.4cqw; border-radius: .6cqw; margin-bottom: 1.6cqw; }
+    .on.fx-zoom  .pop { animation: zoom .45s cubic-bezier(.2,1.3,.4,1) both; }
+    .on.fx-slide .pop { animation: slide .4s cubic-bezier(.15,.9,.3,1) both; }
+    .on.fx-shake .pop { animation: shakeIn .5s ease-out both; }
+    @keyframes zoom    { 0% { transform: scale(.2); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+    @keyframes slide   { 0% { transform: translateX(110%) skewX(-12deg); opacity: 0; } 100% { transform: none; opacity: 1; } }
+    @keyframes shakeIn {
+      0% { transform: scale(1.3); opacity: 0; }
+      30% { transform: scale(1) rotate(-3deg); opacity: 1; }
+      45% { transform: rotate(3deg) translateX(2%); }
+      60% { transform: rotate(-2deg) translateX(-2%); }
+      75% { transform: rotate(1deg); }
+      100% { transform: none; }
+    }
+
+    .pop { position: relative; z-index: 1; }
+    /* 장면마다 옆으로 지나가는 굵은 띠 */
+    .bar {
+      position: absolute; left: -10%; right: -10%; height: 22cqh; top: 39cqh;
+      background: var(--blue); opacity: .45; transform: skewY(-6deg) scaleX(0); z-index: 0;
+    }
+    .on .bar { animation: bar .5s cubic-bezier(.2,.9,.3,1) both; }
+    @keyframes bar { to { transform: skewY(-6deg) scaleX(1); } }
+
+    /* 8~12초: 카운트업 */
+    .counts { display: flex; gap: 8cqw; align-items: flex-end; justify-content: center; }
+    .count .k { font-size: 2.8cqw; font-weight: 700; color: #c9d4dc; margin-bottom: .6cqw; }
+    .count .v { font-size: 10cqw; font-weight: 900; line-height: 1; font-variant-numeric: tabular-nums; }
+    .count .v small { font-size: 4cqw; margin-left: .5cqw; }
+    .count.hot .v { color: var(--hot); }
+    .ex { display: inline-block; font-size: 2cqw; font-weight: 700; color: var(--bg); background: #c9d4dc; padding: .1cqw .8cqw; border-radius: .4cqw; vertical-align: middle; margin-left: .6cqw; }
+    .on .count { animation: zoom .45s cubic-bezier(.2,1.3,.4,1) both; }
+    .on .count:nth-child(2) { animation-delay: .15s; }
+
+    /* 12~15초: 마무리 */
+    .leave { font-size: 13cqw; font-weight: 900; color: var(--hot); line-height: 1.1; }
+    .url  { margin-top: 3cqw; font-size: 3.4cqw; font-weight: 700; color: #fff;
+            border: .3cqw solid #fff; padding: .8cqw 2.4cqw; border-radius: 1cqw; }
+    .on .leave { animation: slam .55s cubic-bezier(.2,1.4,.4,1) both; }
+    .on .url { animation: up .5s .35s ease-out both; }
+    @keyframes up { 0% { transform: translateY(40%); opacity: 0; } 100% { transform: none; opacity: 1; } }
+
+    /* 아래쪽 진행 막대 */
+    .progress { position: absolute; left: 0; bottom: 0; height: .6cqh; background: var(--hot); width: 0; z-index: 6; }
+
+    /* 오른쪽 아래 "다시보기" 버튼 */
+    .replay {
+      position: fixed; right: 20px; bottom: 20px; z-index: 10;
+      font: 700 16px "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      color: var(--bg); background: var(--hot); border: none; border-radius: 999px;
+      padding: 12px 22px; cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    }
+    .replay:hover { background: #fff; }
+  </style>
+</head>
+<body>
+  <div class="stage" id="stage">
+    <div class="flash" id="flash"></div>
+
+    <!-- 장면 1 (0~2초): 제목 -->
+    <div class="scene" id="s-title">
+      <div class="title">안양<br><em>하루 코스</em></div>
+    </div>
+
+    <!-- 장면 2 (2~8초): 추천 장소 (tour.html 내용 그대로) -->
+    <div class="scene fx-zoom" id="s-intro">
+      <div class="bar"></div>
+      <div class="pop"><div class="big">추천 장소<br><span style="color:var(--hot)">6곳</span></div></div>
+    </div>
+    <div class="scene fx-slide" id="s-p1">
+      <div class="bar"></div>
+      <div class="pop" style="display:flex;flex-direction:column;align-items:center">
+        <div class="num">03</div><div class="big">안양1번가</div>
+      </div>
+    </div>
+    <div class="scene fx-zoom" id="s-p2">
+      <div class="bar"></div>
+      <div class="pop" style="display:flex;flex-direction:column;align-items:center">
+        <div class="num">05</div><div class="big">평촌중앙공원</div>
+      </div>
+    </div>
+    <div class="scene fx-shake" id="s-p3">
+      <div class="bar"></div>
+      <div class="pop" style="display:flex;flex-direction:column;align-items:center">
+        <div class="num">06</div><div class="big">범계역 로데오거리</div>
+      </div>
+    </div>
+
+    <!-- 장면 3 (8~12초): 숫자 카운트업 (tour.html 내용 그대로) -->
+    <div class="scene" id="s-count">
+      <div class="counts">
+        <div class="count">
+          <div class="k">추천 장소</div>
+          <div class="v"><span id="c-places">0</span><small>곳</small></div>
+        </div>
+        <div class="count hot">
+          <div class="k">1인 예상 비용 <span class="ex">예시</span></div>
+          <div class="v">약 <span id="c-cost">0</span><small>원</small></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 장면 4 (12~15초): 마무리 -->
+    <div class="scene" id="s-end">
+      <div class="leave">지금 떠나세요</div>
+      <div class="url">hyun-ahn57.github.io/AHN-HYUN/tour.html</div>
+    </div>
+
+    <div class="progress" id="progress"></div>
+  </div>
+
+  <button class="replay" type="button" onclick="play()">다시보기</button>
+
+  <script>
+    // 영상 순서표: [시작 시간(초), 보여줄 장면, 쾅 효과 여부]
+    const TIMELINE = [
+      [0.0,  's-title', true],
+      [2.0,  's-intro', false],
+      [3.5,  's-p1',    true],
+      [5.0,  's-p2',    true],
+      [6.5,  's-p3',    true],
+      [8.0,  's-count', true],
+      [12.0, 's-end',   true],
+    ];
+    const LENGTH = 15;               // 전체 길이(초)
+    const COUNT_FROM = 8.3, COUNT_TO = 11.3;  // 숫자가 올라가는 구간(초)
+
+    const stage = document.getElementById('stage');
+    let startTime = 0, frame = 0, current = null;
+
+    function bang() {
+      // 화면 흔들림 + 번쩍임 (애니메이션을 처음부터 다시 시작)
+      const flash = document.getElementById('flash');
+      stage.classList.remove('shake'); flash.classList.remove('go');
+      void stage.offsetWidth;
+      stage.classList.add('shake'); flash.classList.add('go');
+    }
+
+    function show(id, withBang) {
+      document.querySelectorAll('.scene').forEach(s => s.classList.remove('on'));
+      const el = document.getElementById(id);
+      void el.offsetWidth;
+      el.classList.add('on');
+      if (withBang) bang();
+    }
+
+    function tick(now) {
+      const t = (now - startTime) / 1000;   // 지금까지 흐른 시간(초)
+
+      // 지금 시간에 맞는 장면 찾기
+      let scene = TIMELINE[0];
+      for (const row of TIMELINE) if (t >= row[0]) scene = row;
+      if (scene !== current) { current = scene; show(scene[1], scene[2]); }
+
+      // 숫자 카운트업 (끝으로 갈수록 천천히)
+      const p = Math.min(Math.max((t - COUNT_FROM) / (COUNT_TO - COUNT_FROM), 0), 1);
+      const ease = 1 - Math.pow(1 - p, 3);
+      document.getElementById('c-places').textContent = Math.round(6 * ease);
+      document.getElementById('c-cost').textContent = (Math.round(46000 * ease / 100) * 100).toLocaleString('ko-KR');
+
+      // 진행 막대
+      document.getElementById('progress').style.width = Math.min(t / LENGTH, 1) * 100 + '%';
+
+      if (t < LENGTH) frame = requestAnimationFrame(tick);   // 15초가 지나면 마지막 장면에서 멈춤
+    }
+
+    function play() {
+      cancelAnimationFrame(frame);
+      current = null;
+      startTime = performance.now();
+      frame = requestAnimationFrame(tick);
+    }
+
+    // 페이지를 열면 자동 재생 (폰트가 준비되면 시작, 늦어도 0.8초 안에 시작)
+    let started = false;
+    function startOnce() { if (!started) { started = true; play(); } }
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(startOnce);
+    setTimeout(startOnce, 800);
+  </script>
+</body>
+</html>
